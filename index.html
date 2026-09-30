@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0A0806">
+<meta name="description" content="מחשבון כשל הדדיות לחשיפות לילה בצילום פילם">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="favicon-32.png" sizes="32x32">
+<!-- iOS: open from the home screen without Safari's chrome -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="חשיפון">
+<style>
+:root{color-scheme:dark;padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px)}
+html,body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<title>חֲשִׂיפוֹן</title>
+<style>
+/* Frank Ruhl Libre (SIL OFL 1.1), subset to the wordmark's letters and vowel points: 1.5KB, embedded. */
+@font-face{font-family:'Hasifon';font-style:normal;font-weight:700;font-display:block;
+  src:url(data:font/woff2;base64,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) format('woff2')}
+
+/* layout: single phone-first column — film, metered time, one result slab, timer.
+   single dark theme by intent: this is read in the dark, next to an open shutter. */
+:root{
+  --bg:#070605; --surface:#15100E; --surface2:#1F1714; --line:#342620;
+  --chassis-hi:#1B1512; --chassis-lo:#0C0908; --bevel:rgba(255,255,255,.055);
+  --lcd-hi:#140B08; --lcd-lo:#0B0605; --engrave:0 1px 0 rgba(0,0,0,.85);
+  --fg:#F0E2DA; --muted:#96786D; --accent:#FF3B1E; --accent-deep:#4A1207;
+  --warn:#E0A33A; --good:#8FB26A;
+  --mono:ui-monospace,'SF Mono',Menlo,Consolas,'DejaVu Sans Mono',monospace;
+  --cond:'Avenir Next Condensed','Roboto Condensed','Helvetica Neue',system-ui,sans-serif;
+  --body:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{background:var(--bg)}
+body{margin:0;color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.45;
+  -webkit-text-size-adjust:100%}
+#dim{transition:opacity .25s}
+body.dimmed #dim{opacity:.45}
+.wrap{max-width:min(560px,calc(100% - 20px));margin:10px auto 28px;
+  padding-inline:16px;padding-block:16px 20px;
+  display:flex;flex-direction:column;gap:14px;
+  background:linear-gradient(180deg,var(--chassis-hi),var(--chassis-lo));
+  border:1px solid #241A16;border-radius:16px;
+  box-shadow:inset 0 1px 0 var(--bevel),inset 0 -1px 0 rgba(0,0,0,.6),
+             0 16px 38px rgba(0,0,0,.65)}
+/* instrument scale strip under the nameplate */
+.ticks{height:9px;border-radius:2px;
+  background:repeating-linear-gradient(90deg,var(--line) 0 1px,transparent 1px 9px);
+  opacity:.5;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+header{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  border-bottom:1px solid var(--line);padding-bottom:10px;
+  box-shadow:0 1px 0 var(--bevel)}
+h1{font-family:'Hasifon',Georgia,'Times New Roman',serif;font-weight:700;
+  font-size:31px;letter-spacing:.16em;margin:0;color:var(--accent);line-height:1.45;
+  text-rendering:optimizeLegibility}
+.sub{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.04em}
+.lbl{font-family:var(--cond);font-weight:600;font-size:13px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:7px;display:block;
+  text-shadow:var(--engrave)}
+.card{background:linear-gradient(180deg,#191310,#120D0B);
+  border:1px solid var(--line);border-radius:6px;padding:13px;
+  box-shadow:inset 0 1px 0 var(--bevel)}
+select,input[type=number]{width:100%;background:var(--surface2);color:var(--fg);
+  border:1px solid var(--line);border-radius:3px;padding:11px 10px;font-family:var(--mono);
+  font-size:16px;min-width:0}
+select:focus-visible,input:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.chips{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.chip{background:linear-gradient(180deg,#241B17,#1A1310);border:1px solid var(--line);
+  color:var(--fg);border-radius:4px;padding:11px 2px;font-family:var(--mono);font-size:15px;
+  cursor:pointer;font-variant-numeric:tabular-nums;direction:ltr;
+  box-shadow:inset 0 1px 0 var(--bevel),0 1px 2px rgba(0,0,0,.5)}
+.chip[aria-pressed=true]{background:linear-gradient(180deg,#43130A,var(--accent-deep));
+  border-color:var(--accent);color:var(--accent);
+  box-shadow:inset 0 2px 5px rgba(0,0,0,.7)}
+.row{display:flex;gap:8px;align-items:center;margin-top:8px}
+.row>*{min-width:0}
+.unit{display:flex;border:1px solid var(--line);border-radius:3px;overflow:hidden;flex:0 0 auto}
+.unit button{background:var(--surface2);border:0;color:var(--muted);font-family:var(--cond);
+  font-size:14px;letter-spacing:.08em;padding:11px 13px;cursor:pointer}
+.unit button[aria-pressed=true]{background:var(--accent-deep);color:var(--accent)}
+
+/* result */
+/* recessed readout window */
+.slab{background:linear-gradient(180deg,var(--lcd-hi),var(--lcd-lo));
+  border:1px solid #0A0706;border-radius:8px;padding:18px 14px 15px;text-align:center;
+  box-shadow:inset 0 3px 10px rgba(0,0,0,.85),inset 0 -1px 0 rgba(255,255,255,.04),
+             0 0 0 1px #2C1F1A,0 1px 0 var(--bevel)}
+.big{font-family:var(--mono);font-weight:500;font-size:clamp(44px,15vw,64px);line-height:1;
+  color:var(--accent);font-variant-numeric:tabular-nums;letter-spacing:-.02em;
+  text-shadow:0 0 18px rgba(255,59,30,.22)}
+.under{font-family:var(--mono);font-size:13px;color:var(--muted);margin-top:9px;
+  font-variant-numeric:tabular-nums}
+.alt{display:flex;gap:8px;margin-top:12px}
+.alt>div{flex:1;min-width:0;background:var(--surface);border:1px solid var(--line);
+  border-radius:4px;padding:9px 7px}
+.alt .k{font-family:var(--cond);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.alt .v{font-family:var(--mono);font-size:17px;margin-top:2px;font-variant-numeric:tabular-nums}
+.badge{display:inline-block;font-family:var(--cond);font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;padding:2px 7px;border-radius:2px;border:1px solid currentColor}
+.b-official{color:var(--good)} .b-reported{color:var(--muted)}
+.b-estimate{color:var(--warn)} .b-split{color:var(--accent)}
+.note{font-size:14px;color:var(--muted);margin-top:10px}
+.note strong{color:var(--fg);font-weight:500}
+.flag{margin-top:9px;font-size:14px;color:var(--warn);border-right:2px solid var(--warn);padding-right:9px}
+
+/* tune */
+details summary{font-family:var(--cond);font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);cursor:pointer;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:' ▾'}
+details[open] summary::after{content:' ▴'}
+.tune{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;margin-top:12px}
+.stepper{display:flex;align-items:center;gap:0;border:1px solid var(--line);border-radius:3px}
+.stepper button{background:linear-gradient(180deg,#241B17,#1A1310);border:0;color:var(--fg);
+  box-shadow:inset 0 1px 0 var(--bevel);font-family:var(--mono);
+  font-size:19px;width:42px;height:40px;cursor:pointer}
+.stepper span{font-family:var(--mono);font-size:15px;min-width:74px;text-align:center;
+  font-variant-numeric:tabular-nums}
+.tlbl{font-family:var(--body);font-size:14px}
+.tlbl small{display:block;color:var(--muted);font-size:12px;line-height:1.3}
+
+/* timer */
+.timer{display:flex;gap:8px;align-items:stretch}
+.tdisp{flex:1;background:linear-gradient(180deg,var(--lcd-hi),var(--lcd-lo));
+  border:1px solid #0A0706;border-radius:7px;
+  box-shadow:inset 0 3px 9px rgba(0,0,0,.85),0 0 0 1px #2C1F1A;
+  font-family:var(--mono);font-size:34px;display:flex;align-items:center;justify-content:center;
+  font-variant-numeric:tabular-nums;padding:10px}
+.tdisp.run{color:var(--accent);border-color:var(--accent-deep)}
+.tdisp.done{background:var(--accent);color:#0A0806}
+.tbtn{background:linear-gradient(180deg,#43130A,var(--accent-deep));
+  box-shadow:inset 0 1px 0 var(--bevel),0 1px 2px rgba(0,0,0,.5);
+  border:1px solid var(--accent);color:var(--accent);
+  border-radius:4px;font-family:var(--cond);font-size:16px;letter-spacing:.1em;text-transform:uppercase;
+  padding:0 20px;cursor:pointer}
+.tbtn.ghost{background:var(--surface2);border-color:var(--line);color:var(--muted);padding:0 14px}
+footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
+.slab{cursor:pointer}
+/* log */
+.logrow{display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;
+  padding:9px 0;border-top:1px solid var(--line)}
+.logmeta{font-size:13px;line-height:1.4;min-width:0}
+.logmeta b{font-weight:500;color:var(--fg)}
+.logmeta span{color:var(--muted);font-family:var(--mono);font-size:12px;
+  font-variant-numeric:tabular-nums}
+.logrow select{width:auto;padding:7px 6px;font-size:14px}
+.del{background:none;border:0;color:var(--muted);font-size:17px;cursor:pointer;padding:4px 6px;
+  line-height:1}
+.suggest{background:linear-gradient(180deg,#43130A,var(--accent-deep));
+  border:1px solid var(--accent);border-radius:5px;padding:10px 11px;margin:10px 0;
+  font-size:14px;display:flex;gap:10px;align-items:center;justify-content:space-between}
+.suggest button{background:var(--accent);border:0;color:#0A0806;border-radius:3px;
+  font-family:var(--cond);font-size:14px;letter-spacing:.08em;text-transform:uppercase;
+  padding:7px 13px;cursor:pointer;flex:0 0 auto}
+.logfoot{display:flex;gap:8px;margin-top:12px}
+#frameNo{flex:1}
+body.focus .logcard{display:none}
+.hint{font-family:var(--cond);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);opacity:.65;margin-top:12px}
+/* full-screen readout: the number and the timer, nothing else */
+body.focus .ticks,body.focus header,body.focus .card,body.focus footer,
+body.focus .alt,body.focus .note,body.focus .flag{display:none}
+body.focus .wrap{justify-content:center;min-height:calc(100svh - 60px);gap:18px}
+body.focus .slab{padding:38px 16px 30px}
+body.focus .big{font-size:clamp(74px,27vw,150px)}
+body.focus .under{font-size:17px;margin-top:16px;line-height:1.6}
+body.focus .tdisp{font-size:clamp(46px,15vw,78px);padding:22px}
+body.focus .tbtn{font-size:18px;padding:0 24px}
+footer code{font-family:var(--mono);font-size:12px;color:var(--fg)}
+.dimbtn{background:none;border:1px solid var(--line);color:var(--muted);border-radius:3px;
+  font-family:var(--cond);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  padding:5px 9px;cursor:pointer}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+</head>
+<body>
+<div class="wrap" dir="rtl" id="dim">
+  <header>
+    <div>
+      <h1>חֲשִׂיפוֹן</h1>
+      <div class="sub">תיקון כשל הדדיות · חשיפות לילה</div>
+    </div>
+    <button class="dimbtn" id="dimBtn" type="button">עמעום</button>
+  </header>
+  <div class="ticks" aria-hidden="true"></div>
+
+  <div class="card">
+    <label class="lbl" for="film">סרט</label>
+    <select id="film"></select>
+  </div>
+
+  <div class="card">
+    <span class="lbl">זמן שמד האור נתן</span>
+    <div class="chips" id="chips"></div>
+    <div class="row">
+      <input type="number" id="custom" min="0" step="0.1" inputmode="decimal" placeholder="אחר">
+      <div class="unit">
+        <button type="button" id="uSec" aria-pressed="true">שנ׳</button>
+        <button type="button" id="uMin" aria-pressed="false">דק׳</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="slab" id="slab" role="button" tabindex="0" aria-pressed="false">
+    <div class="big" id="out">—</div>
+    <div class="under" id="under"></div>
+    <div class="alt">
+      <div><div class="k">או פתח צמצם</div><div class="v" id="apert">—</div></div>
+      <div><div class="k">ביטוח +1 עצירה</div><div class="v" id="brack">—</div></div>
+    </div>
+    <div class="flag" id="flag" hidden></div>
+    <div class="note" id="note"></div>
+    <div class="hint" id="hint">נגיעה למסך מלא</div>
+  </div>
+
+  <div class="timer">
+    <div class="tdisp" id="tdisp">00:00</div>
+    <button class="tbtn" id="tStart" type="button">התחל</button>
+    <button class="tbtn ghost" id="tReset" type="button">אפס</button>
+  </div>
+
+  <div class="card">
+    <details id="tuneBox">
+      <summary>כוונון</summary>
+      <div class="tune">
+        <div class="tlbl">פילטר ND<small>אובדן אור — מחושב לפני ההדדיות</small></div>
+        <div class="stepper">
+          <button type="button" data-nd="-1">−</button>
+          <span id="ndVal">0 עצירות</span>
+          <button type="button" data-nd="1">+</button>
+        </div>
+        <div class="tlbl">תיקון אישי<small>נשמר לכל סרט בנפרד</small></div>
+        <div class="stepper">
+          <button type="button" data-off="-1">−</button>
+          <span id="offVal">0</span>
+          <button type="button" data-off="1">+</button>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <div class="card logcard">
+    <details id="logBox">
+      <summary>יומן <span id="logCount"></span></summary>
+
+      <div class="row">
+        <input type="text" id="frameNo" placeholder="מספר פריים / גליל" autocomplete="off">
+        <button class="tbtn ghost" id="logAdd" type="button">רשום</button>
+      </div>
+
+      <div class="suggest" id="suggest" hidden></div>
+      <div id="logList"></div>
+      <div class="flag" id="storeWarn" hidden></div>
+
+      <div class="logfoot">
+        <button class="dimbtn" id="logCopy" type="button">העתק הכל</button>
+        <button class="dimbtn" id="logClear" type="button">מחק הכל</button>
+      </div>
+      <textarea id="logDump" aria-hidden="true" tabindex="-1" style="position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;border:0;padding:0;pointer-events:none"></textarea>
+    </details>
+  </div>
+
+  <footer id="foot"></footer>
+</div>
+
+<script>
+/* ---- film pool + engine (audited 2026-09-28) ----------------------------- */
+/* Howard Bond's measured tables, "Black and White Reciprocity Departure
+   Revisited", PHOTO Techniques Jul/Aug 2003 — the most-cited independent
+   measurement in the film community. Corroborated at the long end by Andrew
+   Roos's independent Delta 100 testing (160s: Roos 547s, Bond 560s).       */
+const BOND = {
+  trix: [[1,1.5],[2,3],[4,6],[8,12],[15,29],[30,78],[60,180],[80,402],[160,1096]],
+  tmx:  [[1,1],[2,2],[4,4.5],[8,10],[15,21],[30,49],[60,107],[80,279],[160,770]],
+  tmy:  [[1,1],[2,2],[4,4.5],[8,10],[15,21],[30,49],[60,104],[80,240],[160,540]],
+  hp5:  [[1,1],[2,2],[4,5],[8,10],[15,24],[30,54],[60,156],[80,345],[160,1140]],
+  d100: [[1,1],[2,2],[4,4.5],[8,9],[15,19],[30,41],[60,93],[80,230],[160,560]]
+};
+
+const FILMS = [
+  /* Ilford / Harman — official P factors, Tc = Tm^P, none at <=1s.
+     Source: HARMAN "Film Reciprocity Failure Compensation", Dec 2023.        */
+  {id:'hp5',   g:'Ilford', n:'HP5+ 400',
+    m:{k:'range',a:{k:'power',p:1.31,thr:1},b:{k:'table',pts:BOND.hp5}},
+    c:'split', dev:'pull', src:'Ilford Dec-2023 מול Bond 2003'},
+  {id:'fp4',   g:'Ilford', n:'FP4+ 125',      m:{k:'power',p:1.26,thr:1}, c:'official', dev:'pull', src:'Ilford Dec-2023'},
+  {id:'panf',  g:'Ilford', n:'Pan F+ 50',     m:{k:'power',p:1.33,thr:1}, c:'official', dev:'pull', src:'Ilford Dec-2023'},
+  {id:'d100',  g:'Ilford', n:'Delta 100',
+    /* Bond and Roos independently agree Ilford over-corrects in the mid band. */
+    m:{k:'range',a:{k:'power',p:1.26,thr:1},b:{k:'table',pts:BOND.d100},
+       lean:{src:'b',from:4,upTo:60,label:'Bond'}},
+    c:'split', dev:'pull', src:'Ilford Dec-2023 מול Bond 2003'},
+  {id:'d400',  g:'Ilford', n:'Delta 400',     m:{k:'power',p:1.41,thr:1}, c:'official', dev:'pull', src:'Ilford Dec-2023'},
+  {id:'d3200', g:'Ilford', n:'Delta 3200',    m:{k:'power',p:1.33,thr:1}, c:'official', dev:'pull', src:'Ilford Dec-2023'},
+  {id:'k400',  g:'Ilford', n:'Kentmere 400',  m:{k:'power',p:1.30,thr:1}, c:'official', dev:'pull', src:'Ilford Dec-2023'},
+  {id:'k100',  g:'Ilford', n:'Kentmere 100',  m:{k:'power',p:1.26,thr:1}, c:'official', dev:'pull', src:'Ilford Dec-2023'},
+  {id:'xp2',   g:'Ilford', n:'XP2 Super 400', m:{k:'power',p:1.31,thr:1}, c:'official', dev:'c41',  src:'Ilford Dec-2023'},
+  {id:'sfx',   g:'Ilford', n:'SFX 200',       m:{k:'power',p:1.43,thr:1}, c:'official', dev:'pull', src:'Ilford Dec-2023'},
+
+  /* Kodak — published anchor points (no formula given).                      */
+  {id:'trix',  g:'Kodak',  n:'Tri-X 400',
+    /* Kodak's Tri-X table contradicts itself: its aperture column says +2 stops
+       where its time column says 2.32, and +3 where the time says 3.58. T-Max's
+       table has no such gap. Bond's densitometry leads up to 2 minutes.        */
+    m:{k:'range',a:{k:'table',pts:[[0.25,0.25],[1,2],[10,50],[100,1200]]},
+                 b:{k:'table',pts:BOND.trix},
+                 lean:{src:'b',from:1,upTo:120,label:'Bond'}},
+    c:'split', dev:'trix', src:'Kodak F-4017 מול Bond 2003'},
+  {id:'tmy',   g:'Kodak',  n:'T-Max 400',
+    m:{k:'range',a:{k:'table',pts:[[1,1],[10,12.6],[100,300]]},
+                 b:{k:'table',pts:BOND.tmy}},
+    c:'split', dev:'none', src:'Kodak F-4043 מול Bond 2003'},
+  {id:'tmx',   g:'Kodak',  n:'T-Max 100',
+    m:{k:'range',a:{k:'table',pts:[[1,1.26],[10,15],[100,200]]},
+                 b:{k:'table',pts:BOND.tmx}},
+    c:'split', dev:'none', src:'Kodak F-4016 מול Bond 2003'},
+
+  /* Fuji                                                                     */
+  {id:'acros', g:'Fuji',   n:'Acros 100 II',  m:{k:'acros'}, c:'official', dev:'none', src:'Fujifilm datasheet'},
+  {id:'provia',g:'Fuji',   n:'Provia 100F',
+    m:{k:'table',pts:[[128,128],[240,302]],cap:480},
+    c:'official', dev:'slide', src:'Fujifilm AF3-0221E2',
+    cc:[[240,'2.5G']]},
+  {id:'velv50',g:'Fuji',   n:'Velvia 50',
+    m:{k:'table',pts:[[1,1],[4,5.04],[8,11.31],[16,25.4],[32,64]],cap:64},
+    c:'official', dev:'velvia', src:'Fujifilm Velvia 50 datasheet',
+    cc:[[4,'5M'],[8,'7.5M'],[16,'10M'],[32,'12.5M']]},
+
+  /* Foma — the datasheet and experienced users disagree by about two stops.  */
+  {id:'fom100',g:'Foma',   n:'Fomapan 100',
+    m:{k:'range',
+       lo:{k:'power',p:1.30,thr:1},
+       hi:{k:'table',pts:[[0.5,0.5],[1,2],[10,80],[100,1600]]}},
+    c:'split', dev:'pull', src:'Foma datasheet vs. field testing'},
+  {id:'fom400',g:'Foma',   n:'Fomapan 400',
+    m:{k:'range',
+       lo:{k:'power',p:1.30,thr:1},
+       hi:{k:'table',pts:[[0.5,0.5],[1,1.5],[10,60],[100,800]]}},
+    c:'split', dev:'pull', src:'Foma datasheet vs. field testing'},
+
+  /* Colour negative — Kodak E-31 gives the daylight colour-negative family no
+     correction to 10s and calls 100s not recommended; current datasheets stop
+     at 1s. The upper bound is CineStill's generic colour guide, Tc = Tm^1.3.  */
+  {id:'por400',g:'צבע',    n:'Portra 400',
+    m:{k:'range',lo:{k:'power',p:1.10,thr:10},hi:{k:'power',p:1.30,thr:1}},
+    c:'split', dev:'colour', src:'Kodak E-31 vs. CineStill guide'},
+  {id:'por160',g:'צבע',    n:'Portra 160',
+    m:{k:'range',lo:{k:'power',p:1.10,thr:10},hi:{k:'power',p:1.30,thr:1}},
+    c:'split', dev:'colour', src:'Kodak E-31 vs. CineStill guide'},
+  {id:'por800',g:'צבע',    n:'Portra 800',
+    m:{k:'range',lo:{k:'power',p:1.10,thr:10},hi:{k:'power',p:1.30,thr:1}},
+    c:'split', dev:'colour', src:'Kodak E-31 vs. CineStill guide'},
+  {id:'ektar', g:'צבע',    n:'Ektar 100',
+    m:{k:'range',lo:{k:'power',p:1.10,thr:10},hi:{k:'power',p:1.30,thr:1}},
+    c:'split', dev:'colour', src:'Kodak E-31 vs. CineStill guide'},
+  {id:'gold',  g:'צבע',    n:'Gold 200',
+    m:{k:'range',lo:{k:'power',p:1.10,thr:10},hi:{k:'power',p:1.30,thr:1},cap:100},
+    c:'split', dev:'colour', src:'Kodak E-31 vs. CineStill guide'},
+  {id:'cs800t',g:'צבע',    n:'CineStill 800T', m:{k:'power',p:1.30,thr:1}, c:'reported', dev:'colour', src:'CineStill support'},
+  {id:'cs50d', g:'צבע',    n:'CineStill 50D',  m:{k:'power',p:1.30,thr:1}, c:'reported', dev:'colour', src:'CineStill support'}
+];
+
+function interpLogLog(pts,t){
+  const n=pts.length;
+  /* strictly below the first anchor there is no published correction; AT the
+     first anchor the table's own value applies, so this guard must not swallow
+     it (T-Max 100's first point is 1s → 1.26s, not 1s → 1s). */
+  if(t<pts[0][0]) return {v:t,flag:'none'};
+  for(let i=0;i<n-1;i++){
+    const [m0,c0]=pts[i],[m1,c1]=pts[i+1];
+    if(t<=m1){
+      const f=(Math.log(t)-Math.log(m0))/(Math.log(m1)-Math.log(m0));
+      return {v:Math.exp(Math.log(c0)+f*(Math.log(c1)-Math.log(c0))),flag:null};
+    }
+  }
+  const [m0,c0]=pts[n-2],[m1,c1]=pts[n-1];
+  const s=(Math.log(c1)-Math.log(c0))/(Math.log(m1)-Math.log(m0));
+  return {v:Math.exp(Math.log(c1)+s*(Math.log(t)-Math.log(m1))),flag:'extrap'};
+}
+
+function applyModel(m,t){
+  if(m.k==='power'){
+    if(t<=m.thr) return {v:t,flag:'none'};
+    return {v:Math.pow(t,m.p),flag:t>900?'extrap':null};
+  }
+  if(m.k==='table'){
+    const r=interpLogLog(m.pts,t);
+    if(m.cap&&t>m.cap) r.flag='notrec';
+    return r;
+  }
+  if(m.k==='acros'){
+    if(t<=120) return {v:t,flag:'none'};
+    return {v:t*Math.SQRT2,flag:t>1000?'extrap':null};
+  }
+  if(m.k==='range'){
+    /* the two sources cross over (Ilford asks more than Bond at 30s and less
+       at 160s), so the bounds are decided by value, never by which source. */
+    const a=applyModel(m.a||m.lo,t), b=applyModel(m.b||m.hi,t);
+    const r={v:Math.sqrt(a.v*b.v),lo:Math.min(a.v,b.v),hi:Math.max(a.v,b.v),lean:null,
+             flag:(a.flag==='none'&&b.flag==='none')?'none':(a.flag==='extrap'||b.flag==='extrap'?'extrap':null)};
+    /* Weighting is by method quality and independent corroboration, never by
+       how often a source is repeated. It applies only inside the band the
+       evidence actually covers; outside it the headline stays the mean. */
+    const L=m.lean;
+    if(L && t>=(L.from||0) && t<=(L.upTo||Infinity)){
+      r.v = (L.src==='b'? b.v : a.v);
+      r.lean = L.label;
+    }
+    if(m.cap&&t>m.cap) r.flag='notrec';
+    return r;
+  }
+  return {v:t,flag:'none'};
+}
+
+/* ND is light loss, so it lands on the metered time BEFORE reciprocity.
+   The personal offset is a correction to the result, so it lands after. */
+function solve(f,metered,nd,off){
+  const eff=metered*Math.pow(2,nd||0);
+  const r=applyModel(f.m,eff), g=Math.pow(2,off||0);
+  return {eff, corrected:r.v*g,
+          lo:r.lo!==undefined?r.lo*g:null, hi:r.hi!==undefined?r.hi*g:null,
+          lean:r.lean||null, stops:Math.log2(r.v*g/eff), flag:r.flag};
+}
+
+function ccFilter(f,t){
+  if(!f.cc) return null;
+  let out=null;
+  for(const [time,filt] of f.cc) if(t>=time*0.75) out=filt;
+  return out;
+}
+
+function roundTime(s){
+  if(s<10)   return Math.round(s*2)/2;
+  if(s<60)   return Math.round(s);
+  if(s<600)  return Math.round(s/5)*5;
+  if(s<3600) return Math.round(s/15)*15;
+  return Math.round(s/60)*60;
+}
+function fmt(s){
+  s=roundTime(s);
+  if(s<60) return (s%1?s.toFixed(1):String(s))+'s';
+  const m=Math.floor(s/60), r=Math.round(s%60);
+  if(m<60) return r? m+'m '+r+'s' : m+'m';
+  const h=Math.floor(m/60), rm=m%60;
+  return rm? h+'h '+rm+'m' : h+'h';
+}
+const FR={0:'',1:'⅓',2:'⅔'};
+function fmtStops(x){
+  if(!isFinite(x)) return '—';
+  const sign=x<0?'−':'+', a=Math.abs(x), th=Math.round(a*3), w=Math.floor(th/3), f=th%3;
+  if(!w&&!f) return '0';
+  return sign+(w?String(w):'')+(f?(w?' ':'')+FR[f]:'')+(th<=3?' עצירה':' עצירות');
+}
+
+const CONF = {
+  official: ['נתוני יצרן','המספר מגיע מדף הנתונים הרשמי של היצרן.'],
+  reported: ['מדווח','לא מדף נתונים פומבי — מקדם מדווח. שווה אימות עצמי.'],
+  split:    ['מקורות חלוקים','היצרן והמדידה העצמאית לא מסכימים. בטווח שבו למדידה העצמאית יש אישוש היא מובילה; מחוצה לו מוצג הממוצע. בחשיפה חשובה צלם את שני הקצוות.'],
+  estimate: ['הערכה','אין נתון רשמי לטווח הזה. הערכה בלבד.']
+};
+
+/* ---- state -------------------------------------------------------------- */
+const store={
+  get(k,d){ try{const v=localStorage.getItem(k);return v===null?d:JSON.parse(v);}catch(e){return d;} },
+  set(k,v){ try{localStorage.setItem(k,JSON.stringify(v));}catch(e){} }
+};
+let filmId = store.get('film','hp5');
+let metered = 8;          // seconds
+let unitMin = false;
+let nd = 0;
+let offsets = store.get('offsets',{});
+const film = () => FILMS.find(f=>f.id===filmId) || FILMS[0];
+const offOf = () => (offsets[filmId]||0)/3;   // stored in thirds of a stop
+
+/* ---- build film select --------------------------------------------------- */
+const sel=document.getElementById('film');
+let lastG=null,og=null;
+FILMS.forEach(f=>{
+  if(f.g!==lastG){ og=document.createElement('optgroup'); og.label=f.g; sel.appendChild(og); lastG=f.g; }
+  const o=document.createElement('option'); o.value=f.id; o.textContent=f.n; og.appendChild(o);
+});
+sel.value=filmId;
+sel.addEventListener('change',()=>{ filmId=sel.value; store.set('film',filmId); render(); });
+
+/* ---- metered time chips -------------------------------------------------- */
+const CHIPS=[1,2,4,8,15,30,60,120,240,480];
+const chipsEl=document.getElementById('chips');
+CHIPS.forEach(s=>{
+  const b=document.createElement('button');
+  b.type='button'; b.className='chip'; b.dataset.s=s;
+  b.textContent = s<60 ? s+'s' : (s/60)+'m';
+  b.dir='ltr';
+  b.addEventListener('click',()=>{ metered=s; document.getElementById('custom').value=''; render(); });
+  chipsEl.appendChild(b);
+});
+const customEl=document.getElementById('custom');
+customEl.addEventListener('input',()=>{
+  const v=parseFloat(customEl.value);
+  if(isFinite(v)&&v>0){ metered=unitMin? v*60 : v; render(); }
+});
+function setUnit(min){
+  unitMin=min;
+  document.getElementById('uSec').setAttribute('aria-pressed',String(!min));
+  document.getElementById('uMin').setAttribute('aria-pressed',String(min));
+  const v=parseFloat(customEl.value);
+  if(isFinite(v)&&v>0){ metered=min? v*60 : v; }
+  render();
+}
+document.getElementById('uSec').addEventListener('click',()=>setUnit(false));
+document.getElementById('uMin').addEventListener('click',()=>setUnit(true));
+
+/* ---- steppers ------------------------------------------------------------ */
+document.querySelectorAll('[data-nd]').forEach(b=>b.addEventListener('click',()=>{
+  nd=Math.max(0,Math.min(15,nd+Number(b.dataset.nd))); render();
+}));
+document.querySelectorAll('[data-off]').forEach(b=>b.addEventListener('click',()=>{
+  const cur=offsets[filmId]||0;
+  offsets[filmId]=Math.max(-6,Math.min(6,cur+Number(b.dataset.off)));
+  store.set('offsets',offsets); render();
+}));
+
+/* ---- dim ----------------------------------------------------------------- */
+const dimBtn=document.getElementById('dimBtn');
+if(store.get('dim',false)) document.body.classList.add('dimmed');
+dimBtn.addEventListener('click',()=>{
+  document.body.classList.toggle('dimmed');
+  store.set('dim',document.body.classList.contains('dimmed'));
+});
+
+/* ---- notes --------------------------------------------------------------- */
+function devNote(f,t){
+  switch(f.dev){
+    case 'trix':{
+      const p = t<1 ? null : t<10 ? 10 : t<100 ? 20 : 30;
+      return p? '<strong>פיתוח −'+p+'%</strong> לפי Kodak. Bond לא מצא צורך בקיצור פיתוח באף סרט שבדק.' : '';
+    }
+    case 'pull':  return 'הקונטרסט מתרחב בחשיפות ארוכות. Ilford ממליצים <strong>לקצר פיתוח ב-10–20%</strong> בסצנה עם טווח רחב; Bond לא מצא צורך בכך.';
+    case 'colour':return '<strong>צבע:</strong> הארכת הזמן לא מתקנת הסטת גוון. השכבות נכשלות בקצב שונה — צפה ל-crossover ותקן בסריקה או עם פילטר CC.';
+    case 'slide': return '<strong>שקופית:</strong> מעל הסף נדרש גם תיקון צבע, לא רק זמן.';
+    case 'velvia':return '<strong>מעל 4 שניות</strong> Fuji דורשים פילטר CC מגנטה. <strong>מעל 64 שניות — לא מומלץ.</strong>';
+    case 'c41':   return 'פיתוח C-41 במעבדה — אין כוונון פיתוח.';
+    default:      return '';
+  }
+}
+const FLAGS={
+  none:   'מתחת לסף — אין צורך בתיקון.',
+  extrap: 'אקסטרפולציה מעבר לנתונים שפורסמו. הסטייה כאן גדולה — צלם שתי פריימים.',
+  notrec: 'היצרן לא ממליץ על זמן כזה בסרט הזה. התוצאה בלתי צפויה.'
+};
+
+/* ---- render -------------------------------------------------------------- */
+let plannedSec=0;
+function modelLine(m){
+  if(m.k==='power') return 'מודל: <code dir="ltr">Tc = Tm^'+m.p+'</code> · ללא תיקון עד '+m.thr+' שנ׳';
+  if(m.k==='acros') return 'מודל: ללא תיקון עד 120 שנ׳ · ‎+½ עצירה עד 1000 שנ׳';
+  if(m.k==='range') return 'שני מודלים, והמספר נגזר משניהם';
+  /* only the anchors near the current reading matter in the field; the full
+     table is reference material, not something to read on a phone at night. */
+  const near=m.pts.filter(p=>p[0]>=metered/12 && p[0]<=metered*12).slice(0,4);
+  const show=(near.length?near:m.pts.slice(0,3));
+  return 'מודל: אינטרפולציה בין נקודות מפורסמות · <span dir="ltr">'+
+         show.map(p=>p[0]+'→'+(Math.round(p[1]*100)/100)).join('  ')+'</span>';
+}
+function render(){
+  const f=film(), r=solve(f,metered,nd,offOf()), split=(r.lo!==null&&r.hi!==null);
+  document.querySelectorAll('.chip').forEach(c=>
+    c.setAttribute('aria-pressed', String(Number(c.dataset.s)===metered && !nd)));
+  document.getElementById('ndVal').textContent = nd? nd+' עצירות' : '0 עצירות';
+  const o=offsets[filmId]||0;
+  document.getElementById('offVal').textContent = o? fmtStops(o/3) : '0';
+
+  document.getElementById('out').textContent = fmt(r.corrected);
+  plannedSec = roundTime(r.corrected);
+
+  const focus=document.body.classList.contains('focus');
+  const parts=[];
+  if(focus) parts.push(f.n);
+  parts.push('נמדד '+fmt(metered));
+  if(nd) parts.push('+ND '+nd+' → '+fmt(r.eff));
+  parts.push(fmtStops(r.stops));
+  if(split && r.hi/r.lo>1.05) parts.push('טווח '+fmt(r.lo)+'–'+fmt(r.hi));
+  if(r.lean) parts.push('לפי '+r.lean);
+  document.getElementById('under').textContent = parts.join('  ·  ');
+
+  document.getElementById('apert').textContent = r.stops>0.05? fmtStops(r.stops) : '—';
+  document.getElementById('brack').textContent = fmt(r.corrected*2);
+
+  const fl=document.getElementById('flag');
+  if(r.flag && FLAGS[r.flag]){ fl.textContent=FLAGS[r.flag]; fl.hidden=false; } else { fl.hidden=true; }
+
+  const c=CONF[f.c], cc=ccFilter(f,r.eff);
+  document.getElementById('note').innerHTML =
+    '<span class="badge b-'+f.c+'">'+c[0]+'</span> '+c[1]+
+    (cc? '<br><strong>פילטר '+cc+'</strong> לאיזון צבע בזמן הזה, לפי היצרן.' : '')+
+    (devNote(f,r.eff)? '<br>'+devNote(f,r.eff) : '');
+
+  document.getElementById('foot').innerHTML = modelLine(f.m)+
+    '<br><span style="opacity:.7">מקור: '+f.src+'</span>';
+
+  if(!timerRunning) showTimer(plannedSec);
+  if(window.renderSuggestReady) renderSuggest();
+}
+
+/* ---- log ----------------------------------------------------------------
+   Four things are captured automatically — date, film, metered reading, the
+   time actually given — and one thing is not: how the frame came out. That
+   one you fill in after developing, and it is the only input that can turn
+   the personal correction from a guess into a measurement.                 */
+let log = store.get('log',[]);
+const RES=[['','—'],['-3','עצירה בחסר'],['-2','⅔ בחסר'],['-1','⅓ בחסר'],
+           ['0','נכון'],['1','⅓ ביתר'],['2','⅔ ביתר'],['3','עצירה ביתר']];
+
+function saveLog(){
+  store.set('log',log);
+  let ok=false;
+  try{ ok = JSON.parse(localStorage.getItem('log')||'null')!==null || log.length===0; }catch(e){ ok=false; }
+  const w=document.getElementById('storeWarn');
+  if(!ok && log.length){ w.textContent='הדפדפן לא שומר את היומן בקובץ מקומי. העתק אותו לפני שתסגור.'; w.hidden=false; }
+  else w.hidden=true;
+}
+function logAdd(){
+  const f=film(), r=solve(f,metered,nd,offOf());
+  log.unshift({d:new Date().toISOString().slice(0,10), film:f.id, fn:f.n,
+               frame:document.getElementById('frameNo').value.trim(),
+               met:metered, nd:nd, gave:roundTime(r.corrected), res:''});
+  document.getElementById('frameNo').value='';
+  saveLog(); renderLog();
+}
+function renderLog(){
+  const list=document.getElementById('logList');
+  document.getElementById('logCount').textContent = log.length? '· '+log.length : '';
+  list.textContent='';
+  log.slice(0,40).forEach((e,i)=>{
+    const row=document.createElement('div'); row.className='logrow';
+    const meta=document.createElement('div'); meta.className='logmeta';
+    meta.innerHTML='<b>'+e.fn+'</b>'+(e.frame? ' · פריים '+e.frame:'')+
+      '<br><span dir="ltr">'+e.d+'</span> · <span>נמדד '+fmt(e.met)+
+      (e.nd? ' +ND'+e.nd : '')+' → נתתי '+fmt(e.gave)+'</span>';
+    const sel=document.createElement('select');
+    RES.forEach(([v,t2])=>{const o=document.createElement('option');o.value=v;o.textContent=t2;
+      if(String(e.res)===v)o.selected=true;sel.appendChild(o);});
+    sel.addEventListener('change',()=>{ log[i].res=sel.value; saveLog(); renderLog(); });
+    const del=document.createElement('button'); del.className='del'; del.type='button';
+    del.textContent='✕'; del.setAttribute('aria-label','מחק רשומה');
+    del.addEventListener('click',()=>{ log.splice(i,1); saveLog(); renderLog(); });
+    row.append(meta,sel,del); list.appendChild(row);
+  });
+  renderSuggest();
+}
+function renderSuggest(){
+  const box=document.getElementById('suggest');
+  const rows=log.filter(e=>e.film===filmId && e.res!=='' && e.res!=null);
+  /* three frames is the floor. Below that the mean is noise, and a tool that
+     suggests a correction from one frame is worse than one that says nothing. */
+  if(rows.length<3){
+    box.hidden=false;
+    box.innerHTML='<span>'+(rows.length? rows.length+' רשומות עם תוצאה על '+film().n+'. '
+      : 'אין עדיין תוצאות על '+film().n+'. ')+'צריך 3 כדי להציע תיקון.</span>';
+    box.querySelector('span').style.opacity='.85';
+    if(!rows.length && !log.length) box.hidden=true;
+    return;
+  }
+  const mean=rows.reduce((a,e)=>a+Number(e.res),0)/rows.length;
+  const sug=Math.round(-mean);            /* thirds of a stop */
+  const cur=offsets[filmId]||0, target=cur+sug;
+  box.hidden=false;
+  if(sug===0){
+    box.innerHTML='<span>'+rows.length+' רשומות על '+film().n+
+      ' · יוצא נכון בממוצע. אל תיגע בכלום.</span>';
+    return;
+  }
+  box.innerHTML='<span>'+rows.length+' רשומות על '+film().n+' · יוצא בממוצע '+
+    fmtStops(Math.abs(mean)/3).replace('+','')+(mean>0?' ביתר':' בחסר')+
+    '. מוצע תיקון '+fmtStops(sug/3)+'.</span>';
+  const b=document.createElement('button'); b.type='button'; b.textContent='החל';
+  b.addEventListener('click',()=>{
+    offsets[filmId]=Math.max(-6,Math.min(6,target));
+    store.set('offsets',offsets); render(); renderLog();
+  });
+  box.appendChild(b);
+}
+document.getElementById('logAdd').addEventListener('click',logAdd);
+document.getElementById('frameNo').addEventListener('keydown',e=>{if(e.key==='Enter')logAdd();});
+document.getElementById('logClear').addEventListener('click',()=>{
+  if(!log.length) return;
+  const btn=document.getElementById('logClear');
+  if(btn.dataset.armed){ log=[]; saveLog(); renderLog(); btn.textContent='מחק הכל'; delete btn.dataset.armed; }
+  else { btn.dataset.armed='1'; btn.textContent='בטוח? לחץ שוב';
+         setTimeout(()=>{btn.textContent='מחק הכל';delete btn.dataset.armed;},4000); }
+});
+document.getElementById('logCopy').addEventListener('click',()=>{
+  const tsv='תאריך\tסרט\tפריים\tנמדד(שנ)\tND\tניתן(שנ)\tתוצאה(שליש עצירה)\n'+
+    log.map(e=>[e.d,e.fn,e.frame,e.met,e.nd,e.gave,e.res].join('\t')).join('\n');
+  const ta=document.getElementById('logDump'); ta.value=tsv;
+  const btn=document.getElementById('logCopy');
+  const done=()=>{btn.textContent='הועתק';setTimeout(()=>btn.textContent='העתק הכל',1800);};
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(tsv).then(done).catch(()=>{ta.select();done();});
+  } else { ta.select(); try{document.execCommand('copy');}catch(e){} done(); }
+});
+
+/* ---- full-screen readout ------------------------------------------------- */
+const slab=document.getElementById('slab');
+function toggleFocus(){
+  const on=document.body.classList.toggle('focus');
+  slab.setAttribute('aria-pressed',String(on));
+  document.getElementById('hint').textContent = on? 'נגיעה לחזרה' : 'נגיעה למסך מלא';
+  render();
+}
+slab.addEventListener('click',toggleFocus);
+slab.addEventListener('keydown',e=>{
+  if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggleFocus(); }
+});
+
+/* ---- timer --------------------------------------------------------------- */
+let timerRunning=false, remain=0, tick=null, wake=null, ac=null;
+const tdisp=document.getElementById('tdisp'), tStart=document.getElementById('tStart');
+function showTimer(s){
+  s=Math.max(0,Math.round(s));
+  const m=Math.floor(s/60), r=s%60;
+  tdisp.textContent=String(m).padStart(2,'0')+':'+String(r).padStart(2,'0');
+}
+function beep(){
+  try{
+    ac=ac||new (window.AudioContext||window.webkitAudioContext)();
+    [0,300,600].forEach(d=>{
+      const o=ac.createOscillator(), g=ac.createGain();
+      o.frequency.value=880; o.connect(g); g.connect(ac.destination);
+      const t=ac.currentTime+d/1000;
+      g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(0.3,t+0.01);
+      g.gain.exponentialRampToValueAtTime(0.0001,t+0.18);
+      o.start(t); o.stop(t+0.2);
+    });
+  }catch(e){}
+}
+function stopTimer(){
+  timerRunning=false; clearInterval(tick); tick=null;
+  tStart.textContent='התחל'; tdisp.classList.remove('run');
+  if(wake){ try{wake.release();}catch(e){} wake=null; }
+}
+tStart.addEventListener('click',()=>{
+  if(timerRunning){ stopTimer(); return; }
+  if(remain<=0) remain=plannedSec;
+  if(remain<=0) return;
+  timerRunning=true; tdisp.classList.add('run'); tdisp.classList.remove('done');
+  tStart.textContent='עצור';
+  if(navigator.wakeLock) navigator.wakeLock.request('screen').then(w=>wake=w).catch(()=>{});
+  const end=Date.now()+remain*1000;
+  tick=setInterval(()=>{
+    remain=(end-Date.now())/1000;
+    if(remain<=0){
+      remain=0; showTimer(0); stopTimer();
+      tdisp.classList.add('done'); tdisp.textContent='סגור';
+      if(navigator.vibrate) navigator.vibrate([400,150,400,150,600]);
+      beep();
+      return;
+    }
+    showTimer(remain);
+  },200);
+});
+document.getElementById('tReset').addEventListener('click',()=>{
+  stopTimer(); remain=0; tdisp.classList.remove('done'); showTimer(plannedSec);
+});
+
+window.renderSuggestReady=true;
+renderLog();
+render();
+</script>
+
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>{ navigator.serviceWorker.register('sw.js').catch(()=>{}); });
+}
+</script>
+</body>
+</html>
